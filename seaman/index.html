@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>SEAMAN — a god's sandbox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="stage"></canvas>
+
+<div id="hud" class="panel">
+  <div class="hud-head">
+    <div class="name-row">
+      <h1 id="cname">SEAMAN</h1>
+      <span id="stageTag" class="tag">EGG</span>
+    </div>
+    <div class="sub"><span id="ageTxt">0.0 days</span> · <span id="bondTxt">bond 8</span></div>
+  </div>
+  <div id="bars" class="bars"></div>
+  <div id="moodTxt" class="mood">calm</div>
+</div>
+
+<div id="divine" class="panel right">
+  <div class="dtitle">divine powers</div>
+  <div class="dgrid">
+    <button class="dbtn" data-power="bless" title="Bless your creature (B)">bless</button>
+    <button class="dbtn" data-power="gift" title="Grant a gift at the cursor (G)">gift</button>
+    <button class="dbtn" data-power="rain" title="Make it rain inside the tank (R)">rain</button>
+    <button class="dbtn" data-power="revive" title="Resurrect / restore (V)">revive</button>
+    <button class="dbtn" data-power="newborn" title="Start a new life (N)">new life</button>
+    <button class="dbtn" data-power="speed" title="Time speed (T)">time 1×</button>
+  </div>
+  <div class="dgrid small">
+    <button class="dbtn toggle on" data-toggle="narrator" title="Narrator voice">voice</button>
+    <button class="dbtn toggle on" data-toggle="sfx" title="Sound effects">sfx</button>
+    <button class="dbtn" data-power="help" title="Help (?)">?</button>
+  </div>
+  <div class="log" id="log"></div>
+</div>
+
+<div id="dock">
+  <div class="tray" id="tray">
+    <button class="tool" data-act="feed" title="Feed (1)"><span class="ico">🍓</span><span>feed</span></button>
+    <button class="tool" data-act="water" title="Give water (2)"><span class="ico">💧</span><span>water</span></button>
+    <button class="tool" data-act="clean" title="Wash the habitat (3)"><span class="ico">🫧</span><span>wash</span></button>
+    <button class="tool" data-act="play" title="Play together (4)"><span class="ico">🎈</span><span>play</span></button>
+    <button class="tool" data-act="sleep" title="Tuck it in / wake up (5)"><span class="ico">🌙</span><span>sleep</span></button>
+    <button class="tool" data-act="medicine" title="Medicine (6)"><span class="ico">💊</span><span>medicine</span></button>
+  </div>
+  <form id="sayForm" class="say" autocomplete="off">
+    <button type="button" id="micBtn" class="mic" title="Speak to it (M)">🎙</button>
+    <input id="sayInput" type="text" placeholder="say something to your creature…" maxlength="120">
+    <button type="submit" class="send" title="Send">▸</button>
+  </form>
+</div>
+
+<div id="narr" class="narr-box"></div>
+<div id="micHint" class="hint"></div>
+
+<div id="veil">
+  <div class="card">
+    <h2>SEAMAN</h2>
+    <p class="tagline">a god's sandbox</p>
+    <p>Something has been growing in the water for a very long time. It is yours now, and you are all it has.</p>
+    <ul>
+      <li><b>Keep it alive</b> — feed it, give it water, wash the glass, let it sleep.</li>
+      <li><b>Talk to it</b> — it understands a handful of words. Use the microphone, or type.</li>
+      <li><b>Watch it grow</b> — care, affection and time decide which form it takes.</li>
+      <li><b>You are a god here</b> — nothing can end this life unless you end it.</li>
+    </ul>
+    <p class="tiny">Headphones recommended. The narrator speaks.</p>
+    <button id="beginBtn">begin</button>
+  </div>
+</div>
+
+<script src="js/rng.js"></script>
+<script src="js/stages.js"></script>
+<script src="js/creature.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
